@@ -96,7 +96,7 @@
   # save just the device configurations 
   $devices = $symdev_xml.SymCLI_ML.Symmetrix.Device
   
-  # loop over all devices and save volume ID, internal wwn, external wwn in csv format
+  # loop over all devices and save volume ID, internal wwn, external wwn in table format
   Create-Table -TableName DeviceTable -ColumnNames Volume,Internal_wwn,External_wwn
   foreach ($device in $devices) {
     $dev_name = $device.Dev_Info.dev_name
@@ -105,7 +105,7 @@
     $DeviceTable.Rows.Add($dev_name,$wwn,$e_wwn) | Out-Null
   }
   
-  
+  # Pipe device table to csv file
   $DeviceTable | Export-Csv $ReportName -NoTypeInformation -Force -Encoding "ASCII"
   $ReportPath = Get-ChildItem $ReportName | Select-Object -ExpandProperty FullName
   Write-Host "Report saved to $ReportPath"
