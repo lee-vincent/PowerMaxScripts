@@ -86,7 +86,7 @@
   Set-Item -path env:SYMCLI_OUTPUT_MODE -Value 'XML'
   
   # save array configuration into xml variable
-  [xml]$symdev_xml = symdev list -sid $Sid -v -offline
+  [xml]$symdev_xml = symdev list -sid $Sid -v
   
   if (-not $?)
   {
