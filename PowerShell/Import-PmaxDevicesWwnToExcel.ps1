@@ -30,6 +30,10 @@
   
   $ErrorActionPreference = "Stop"
   
+  # https://www.powershellbros.com/create-table-function-working-data-tables-powershell/
+  # Version : 1.2
+  # Author : Lipinski, Grzegorz
+  # Date : August 3, 2017
   function Create-Table {
     #region Parameters
         param(
