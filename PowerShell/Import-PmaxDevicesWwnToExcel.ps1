@@ -28,7 +28,6 @@
     [string]$Sid
   )
   
-  $ErrorActionPreference = "Stop"
   
   # https://www.powershellbros.com/create-table-function-working-data-tables-powershell/
   # Version : 1.2
